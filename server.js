@@ -11,10 +11,15 @@ const liveblocks = new Liveblocks({
   secret: process.env.LIVEBLOCKS_SECRET_KEY,
 });
 
-app.use(cors({
-  origin: ['https://coderoom-pied.vercel.app', 'http://localhost:3000'],
-  credentials: true
-}));
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://coderoom-pied.vercel.app",
+    ],
+    credentials: true,
+  })
+);
 
 app.use(express.json());
 
